@@ -1,0 +1,100 @@
+{
+  "name": "Tuintra Teams",
+  "identifier": "tuintrateams",
+  "icon": "supervisor-account",
+  "type": "A",
+  "version": "1.0.0",
+  "author": "PepoCivs",
+  "description": {
+    "es-ES" : "",
+    "en-US" : ""
+  },
+  "descriptionShort": {
+    "es-ES" : "",
+    "en-US" : ""
+  },
+  "documentation": {
+    "es-ES": "",
+    "en-US": ""
+  },
+  "category": [
+    "social"
+  ],
+  "platforms" : [
+    "android",
+    "ios",
+    "windows"
+  ],
+  "price": 0,
+  "images" : {
+    "list" : "modules/tuintrateams/images/tuintrateams_list.png",
+    "screenshots" : [
+      "modules/tuintrateams/images/tuintrateams_screenshot.png",
+      "modules/tuintrateams/images/tuintrateams_screenshot2.png"
+    ],
+    "popover" : "modules/tuintrateams/images/tuintrateams_popover.png",
+    "banner" : "modules/tuintrateams/images/tuintrateams_popover.png",
+    "logo" : "modules/tuintrateams/images/tuintrateams_icon.png"
+  },
+  "showOn": {
+    "menu": true,
+    "market": true,
+    "dragDrop": true
+  },
+  "requires": {},
+  "canContain": false,
+  "searchable": true,
+  "view": "modules/tuintrateams/index.html",
+  "files": [
+    "modules/tuintrateams/controller.js",
+    "modules/tuintrateams/style.css"
+  ],
+  "libs": [{
+    "bower": { "moment": "^2.11.2" },
+    "src": "bower_components/moment/moment.js"
+  }],
+  "scope": {
+    "clubDomain": "",
+    "teamId": "",
+    "clubTeams": true,
+    "showMembers": false
+  },
+  "config": [
+    {
+      "type": "input",
+      "key": "domain",
+      "templateOptions": {
+        "description": "Tuintra Domain or Subdomain",
+        "pattern": "(https?://)([/\\w.()-]*).*",
+        "required": true,
+        "label": "Tuintra domain"
+      }
+    },
+    {
+      "type": "input",
+      "key": "teamId",
+      "templateOptions": {
+        "description": "Team identifier (blank to see all)",
+        "pattern": "^[0-9]+$",
+        "required": true,
+        "label": "Team Id"
+      }
+    },
+    {
+      "key": "clubTeams",
+      "type": "checkbox",
+      "templateOptions": {
+        "label": "Show only club teams",
+        "description": "Show only club teams"
+      }
+    },
+    {
+      "key": "showMembers",
+      "type": "checkbox",
+      "templateOptions": {
+        "label": "Show team members",
+        "description": "Show team members"
+      }
+    }
+  ]
+}
