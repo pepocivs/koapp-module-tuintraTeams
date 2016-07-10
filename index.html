@@ -1,0 +1,43 @@
+<div ng-controller="tuintrateamsCtrl" class="module tuintrateams">
+
+  <div class='iframeLoading' ng-if="isBusy">
+    <div class='transitionloader'>
+    </div>
+  </div>
+
+  <koa-item ng-if="error">{{error}}</koa-item>
+
+  <div ng-if="!error">
+    <koa-grid cell-space="5px" columns="1" ng-if="!isBusy">
+      <koa-card ng-repeat="team in teams" heading="{{team.teamName}}" image="{{team.picture}}">
+        <div class="card-content">
+          <koa-grid cell-space="5px" columns="2">
+            <koa-item>
+              <koa-item-body two-line>
+                <div secondary>{{ 'tuintrateams.category' | translate }}:</div>
+                <div>{{team.category}}</div>
+              </koa-item-body>
+            </koa-item>
+            <koa-item>
+              <koa-item-body two-line>
+                <div secondary>{{ 'tuintrateams.gender' | translate }}:</div>
+                <div>{{team.gender}}</div>
+              </koa-item-body>
+            </koa-item>
+          </koa-grid>
+          <koa-grid cell-space="5px" columns="2" ng-if="tuintrateams.modulescope.showMembers">
+            <koa-icon-item ng-repeat="player in team.players">
+              <img ng-if="player.picture" class="player-picture" src="{{player.picture}}" />
+              <div ng-if="!player.picture" class="player-picture"></div>
+              <koa-item-body two-line>
+                <div>{{player.name.public}}</div>
+                <div secondary>{{player.rol}}</div>
+              </koa-item-body>
+            </koa-icon-item>
+          </koa-grid>
+        </div>
+      </koa-card>
+    </koa-grid>
+  </div>
+
+</div>
